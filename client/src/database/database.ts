@@ -26,7 +26,8 @@ export const subscriptionOption = [
       'no ads',
       'access to web app',
       '100% encrypted communication',
-      '90 days account inactivity',
+      '90 days account inactivity 000',
+      'Basic storage replication 000',
       'terminal integration',
     ],
   },
@@ -46,7 +47,7 @@ export const subscriptionOption = [
   },
   {
     id:nanoid(),
-    type: 'pro',
+    type: 'ultimate',
     price: 24.99,
     storage: 400,
     numberUsers: 40,
