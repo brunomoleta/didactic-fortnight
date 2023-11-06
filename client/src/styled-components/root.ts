@@ -18,6 +18,7 @@ const rootSettings = {
     dark100: 'hsl(229, 22%, 19%)',
     grey: 'hsl(227, 13%, 52%)',
     red: 'hsl(0, 83%, 65%)',
+    offWhite: "hsl(0, 0%, 98%)"
   },
   fontFamily: {
     primary: 'Kumbh Sans, sans-serif',
@@ -30,7 +31,7 @@ const rootSettings = {
     },
 
     h2: {
-      fontWeight: 700,
+      fontWeight: 600,
       fontSize: '1.25rem',
       lineHeight: "1.75rem",
     },
