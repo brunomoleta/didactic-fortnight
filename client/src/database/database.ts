@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid';
+
 export const homeHero: string =
   'A simple solution to complex tasks is coming soon';
 
@@ -10,12 +12,15 @@ export const buttonText = {
   sendForm: 'Submit',
 };
 
+
+
 export const subscriptionOption = [
   {
+    id:nanoid(),
     type: 'starter',
-    storage: '2 GB',
-    price: 'Free',
-    numberUsers: '3 devices',
+    price: 0.00,
+    storage: 2,
+    numberUsers: 3,
     text: [
       'basic document collaboration',
       'no ads',
@@ -26,12 +31,13 @@ export const subscriptionOption = [
     ],
   },
   {
+    id:nanoid(),
     type: 'pro',
-    price: '9.99',
-    numberUsers: '10 devices',
+    price: 9.99,
+    storage: 50,
+    numberUsers: 10,
     text: [
       'ai controls and insights',
-      '50 GB cloud storage',
       'access to web app',
       '100% encrypted communication',
       'files stored forever',
@@ -39,12 +45,13 @@ export const subscriptionOption = [
     ],
   },
   {
+    id:nanoid(),
     type: 'pro',
-    price: '24.99',
-    numberUsers: '40 devices',
+    price: 24.99,
+    storage: 400,
+    numberUsers: 40,
     text: [
       'ai controls and insights',
-      '200 GB cloud storage',
       'access to web app',
       '100% encrypted communication',
       'files stored forever',
