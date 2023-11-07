@@ -60,8 +60,11 @@ export interface IsubscriptionOptions {
   id: string;
   type: string;
   storage: number;
-  price: number;
-  numberUsers: number;
-  text: string[]
+  price: number | string;
+  keyFeatures: string[];
+  persona: string;
+  text: string[];
+  buttonText: string
 }
+
 /* CUSTOM: ADD YOUR OWN HERE */
