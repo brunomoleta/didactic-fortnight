@@ -12,8 +12,9 @@ const theme = {
 
 const rootSettings = {
   colors: {
-    primary: 'hsl(228, 100%, 66%)',
-    primaryUnsaturated: 'hsl(228, 100%, 75%)',
+    primary: 'hsl(228, 100%, 55%)',
+    primaryMedium: 'hsl(228, 100%, 75%)',
+    primaryUnsaturated: 'hsl(228, 100%, 91%)',
     dark000: 'hsl(228, 22%, 26%)',
     dark100: 'hsl(229, 22%, 19%)',
     grey: 'hsl(227, 13%, 52%)',
@@ -23,30 +24,32 @@ const rootSettings = {
   fontFamily: {
     primary: 'Kumbh Sans, sans-serif',
   },
+  fontWeight: {
+    normal: 400,
+    medium: 500,
+    semiBold: 600,
+    bold: 700
+  },
   fontType: {
     h1: {
-      fontWeight: 700,
       fontSize: '3.5rem',
       lineHeight: "4rem"
     },
 
     h2: {
-      fontWeight: 600,
-      fontSize: '1.25rem',
+      fontSize: '1.625rem',
       lineHeight: "1.75rem",
+      letterSpacing: ".03125rem"
     },
     h3: {
-      fontWeight: 700,
-      fontSize: "1rem",
+      fontSize: "1.25rem",
       lineHeight: "3rem"
     },
     body1: {
-      fontWeight: 400,
       fontSize: '1.125rem',
       lineHeight: "1.75rem"
     },
     body2: {
-      fontWeight: 400,
       fontSize:'1rem',
       lineHeight: "1.75rem"
     },
