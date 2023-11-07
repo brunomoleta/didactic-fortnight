@@ -7,9 +7,13 @@ import styled from 'styled-components';
 import rootSettings from '../../styled-components/root';
 
 const LiOption = styled.li<{ $ultimate?: boolean }>`
-  border: 1px solid ${rootSettings.colors.grey};
   background-color: ${(props) =>
-    props.$ultimate ? 'hsl(228, 100%, 66%)' : 'white'};
+    props.$ultimate ? rootSettings.colors.primaryUnsaturated : 'white'};
+  border-radius: 12px;
+  padding-inline: 48px;
+  padding-block: 36px;
+  box-shadow: 0px 50px 50px -25px rgba(75, 92, 154, 0.25);
+
 `;
 
 const CardList = styled.ol`
@@ -23,7 +27,7 @@ function SubOptions() {
     <CardList>
       {subscriptionOption.map((item: IsubscriptionOptions) => (
         <LiOption
-          $ultimate={item.type === subscriptionOption[2].type}
+          $ultimate={item.type === subscriptionOption[1].type}
           key={nanoid()}
         >
           <SubOption option={item} />
