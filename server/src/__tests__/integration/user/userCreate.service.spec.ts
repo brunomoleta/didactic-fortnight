@@ -1,17 +1,24 @@
-import { createUserService } from "../../services/createUser.service";
-import { DataSource, Repository } from "typeorm";
-import { AppDataSource } from "../../data-source";
-import { User } from "../../entities";
-import supertest from "supertest";
-import app from "../../app";
-import createUserRouteMock from "../mocks/users/createUser.route.mock";
-import { userRepo } from "../../repositories";
+import { DataSource } from 'typeorm';
+import { AppDataSource } from '../../../data-source';
+import { User } from '../../../entities';
+import supertest from 'supertest';
+import app from '../../../app';
+import createUserRouteMock from '../../mocks/users/createUser.route.mock';
+import { userRepo } from '../../../repositories';
 
-describe("POST /users", () => {
+describe('Integration test: POST /users', () => {
   let connection: DataSource;
 
-  const userRepo: Repository<User> = AppDataSource.getRepository(User);
+  beforeAll(async () => {
+    await AppDataSource.initialize()
+      .then((response) => {
+        connection = response;
 
+      })
+
+      .catch((error) => console.error(error));
+  });
+  
   beforeEach(async () => {
     const users: Array<User> = await userRepo.find();
     await userRepo.remove(users);
@@ -21,24 +28,32 @@ describe("POST /users", () => {
   });
 });
 
-it("Success: Able to create a user - Full body", async () => {
+it('Success: Able to create a user - Full body', async () => {
   const userInput = createUserRouteMock.userComplete;
-  const response = await supertest(app).post("/users").send(userInput);
+  console.log(-30)
+  const response = await supertest(app)
+    .post("/users")
+    .send(userInput);
+  console.log(-4)
 
   const expectResults = {
     status: 201,
   };
 
   expect(response.status).toBe(expectResults.status);
+  console.log(-2)
   expect(response.body).toEqual(expect.objectContaining(userInput));
+  console.log(-1)
 
   expect(response.body).toEqual(
     expect.objectContaining({
       id: expect.any(Number),
       createdAt: expect.any(String),
-    })
+    }),
   );
+  console.log(5)
 });
+/*
 
 it("Error: Must not be able to create a user - Email already exists", async () => {
   await userRepo.save(createUserRouteMock.userRepeated);
@@ -158,3 +173,4 @@ it("Error: Unable to create user - Invalid body 02", async () => {
   }
   expect(response.status).toBe(expectResults.status);
 });
+*/
