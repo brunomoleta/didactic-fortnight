@@ -5,12 +5,6 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 
-enum AllowedValues {
-  Q = "starter",
-  J = "pro",
-  K = "ultimate",
-}
-
 @Entity("users")
 export class User {
   @PrimaryGeneratedColumn("increment")
@@ -29,10 +23,9 @@ export class User {
   annual: boolean;
 
   @Column({
-    type: "enum",
-    enum: AllowedValues,
+    type: "varchar", length: 10, default:"business"
   })
-  plan: AllowedValues;
+  plan: string;
 
   @Column({ type: "varchar", length: 64 })
   company: string;
