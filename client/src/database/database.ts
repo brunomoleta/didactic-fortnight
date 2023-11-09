@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import type { IsubscriptionOptions } from '../../types/static';
 
 export const homeHero: string =
   'A simple solution to complex tasks is coming soon';
@@ -8,7 +9,6 @@ export const homeParagraph: string =
 
 export const buttonText = {
   heroHome: 'Get Started',
-  subscriptionOption: '30 day free trial',
   sendForm: 'Submit',
 };
 
@@ -18,46 +18,57 @@ export const subscriptionOption = [
   {
     id:nanoid(),
     type: 'starter',
-    price: 0.00,
+    persona: "individuals",
+    price: "free",
     storage: 2,
-    numberUsers: 3,
+    keyFeatures:[
+      "up to 2gb cloud storage",
+      "up to 3 workspaces"
+    ],
     text: [
-      'basic document collaboration',
-      'no ads',
-      'access to web app',
       '100% encrypted communication',
+      'basic document collaboration',
+      'terminal integration',
       '90 days account inactivity 000',
       'Basic storage replication 000',
-      'terminal integration',
+      "personalized ads 000"
+
     ],
+    buttonText: "sign up, it's Free"
   },
   {
     id:nanoid(),
-    type: 'pro',
-    price: 9.99,
+    type: 'business',
+    price: 12.49,
     storage: 50,
-    numberUsers: 10,
+    persona: "teams",
+    keyFeatures:[],
     text: [
       'ai controls and insights',
+      "no ads",
       'access to web app',
       '100% encrypted communication',
       'files stored forever',
       'terminal integration',
     ],
+    buttonText: "start free 30-day trial"
   },
   {
     id:nanoid(),
-    type: 'ultimate',
-    price: 24.99,
+    type: 'enterprise',
+    price: "let's talk",
     storage: 400,
-    numberUsers: 40,
+    persona: "scaling teams",
+    keyFeatures:[],
     text: [
       'ai controls and insights',
+      "no ads",
       'access to web app',
       '100% encrypted communication',
       'files stored forever',
       'terminal integration',
     ],
+    buttonText: "contact sales"
   },
 ];
 
