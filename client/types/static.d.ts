@@ -56,4 +56,12 @@ declare module '*.png' {
   export default ref;
 }
 
+export interface IsubscriptionOptions {
+  id: string;
+  type: string;
+  storage: number;
+  price: number;
+  numberUsers: number;
+  text: string[]
+}
 /* CUSTOM: ADD YOUR OWN HERE */
