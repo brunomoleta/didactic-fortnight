@@ -5,6 +5,7 @@ import SubOptions from '../../components/SubOptions';
 import { OverallBody } from '../../styled-components/sharedStyles';
 import Button from '../../components/Button';
 import { Link } from 'react-router-dom';
+import Countdown from '../../components/countdown';
 
 function Homepage() {
   return (
@@ -16,6 +17,7 @@ function Homepage() {
         <Button to="/signup" as={Link}>
           {buttonText.heroHome}
         </Button>
+        <Countdown />
         <SubOptions />
       </OverallBody>
     </>
